@@ -1,0 +1,23 @@
+version: "3.4"
+services:
+  db:
+    image: postgres:13
+    restart: unless-stopped
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - db:/var/lib/postgresql/data
+  redis:
+    image: redis:5
+    restart: unless-stopped
+    ports:
+      - 6379:6379
+    volumes:
+      - redis:/var/lib/redis/data
+volumes:
+  db:
+    driver: local
+  redis:
+    driver: local

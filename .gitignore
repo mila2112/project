@@ -1,0 +1,6 @@
+.DS_Store
+.env
+.eslintignore
+.eslintrc
+.idea/
+node_modules/
